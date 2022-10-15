@@ -15,7 +15,7 @@
 	<meta name="twitter:image" content=" http://euro-travel-example.com/thumbnail.jpg">
 	<meta name="twitter:card" content="summary_large_image">
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+    <link rel="icon" href="https://img.icons8.com/external-flat-design-circle/40/000000/external-47-business-and-investment-flat-design-circle.png">
 	<title>Solorun - Blog</title>
 
 	<!-- Google font -->

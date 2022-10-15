@@ -6,7 +6,7 @@
       {{ Session('success') }}
     </div>
   @endif
-
+  <p><h5>Dimohon Untuk Tidak Mengedit User/Admin Ataupun Menghapus Nya Terima Kasih!</h5></p>
   <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm">Tambah User</a><br><br>
   <table class="table table-striped table-hover table-sm table-bordered">
     <tr>
