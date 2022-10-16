@@ -24,6 +24,7 @@
 	<!-- Bootstrap -->
 	<link type="text/css" rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 
+
 	<!-- Font Awesome Icon -->
 	<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 
@@ -63,6 +64,7 @@
 					<!-- /logo -->
 
 					<!-- search & aside toggle -->
+
 					<div class="nav-btns">
 						<button class="aside-btn"><i class="fa fa-bars"></i></button>
 						<button class="search-btn"><i class="fa fa-search"></i></button>
@@ -74,6 +76,30 @@
 								<span></span>
 							</button>
 						</div>
+                            {{-- Authentifikasi --}}
+                            @guest
+                                    <a href="{{ route('login') }}">{{ __('Login') }}</a> |
+                            @if (Route::has('register'))
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            @endif
+                        @else
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                        @endguest
+                            {{-- End Authentifikasi --}}
 					</div>
 					<!-- /search & aside toggle -->
 				</div>
